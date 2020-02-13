@@ -362,7 +362,7 @@ public function getMembers() {
                 'member_id','full_name','photo_file', 'application_type', 'city', 'phone_cell', 'phone_work', 'phone_home',
                 'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                 'sub_city','wereda','house_number','baptized_church','church_group_place','birth_place','emergency_contact_name','emergency_contact_phone','emergency_contact_subcity','emergency_contact_house_no',
-                'have_family_fellowship', 'salvation_church', 'living_status'
+                'have_family_fellowship', 'salvation_church', 'living_status', 'living_status_other'
             );
             $rules = [
                 'full_name' => 'required',
@@ -401,7 +401,7 @@ public function getMembers() {
                     'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                     'sub_city','wereda','house_number','church_group_place','birth_place','emergency_contact_name',
                     'emergency_contact_phone', 'baptized_church', 'emergency_contact_wereda','emergency_contact_subcity','emergency_contact_house_no',
-                    'have_family_fellowship', 'salvation_church', 'living_status'
+                    'have_family_fellowship', 'salvation_church', 'living_status', 'living_status_other'
                 );
 
                 $item = new Member();
@@ -427,6 +427,7 @@ public function getMembers() {
                 $item->gender = isset($credential['gender']) ? $credential['gender']: null;
                 $item->address = isset($credential['address']) ? $credential['address']: null;
                 $item->living_status = isset($credential['living_status']) ? $credential['living_status']: null;
+                $item->living_status_other = isset($credential['living_status_other']) ? $credential['living_status_other']: null;
                 $item->salvation_date = isset($credential['salvation_date']) ? $credential['salvation_date']: null;
                 $item->salvation_church = isset($credential['salvation_church']) ? $credential['salvation_church']: null;
                 $item->is_baptized = isset($credential['is_baptized']) ? $credential['is_baptized']: null;
@@ -469,7 +470,7 @@ public function getMembers() {
                 'full_name', 'photo_file', 'city', 'phone_cell', 'phone_work', 'phone_home',
                 'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                 'sub_city','wereda','house_number', 'baptized_church', 'church_group_place','birth_place','emergency_contact_name','emergency_contact_phone','emergency_contact_wereda', 'emergency_contact_subcity','emergency_contact_house_no',
-                'have_family_fellowship', 'salvation_church', 'living_status'
+                'have_family_fellowship', 'salvation_church', 'living_status', 'living_status_other'
             );
             $rules = [
                 'full_name' => 'required',
@@ -527,6 +528,7 @@ public function getMembers() {
             $item->birth_place = isset($credential['birth_place']) ? $credential['birth_place']: null;
             $item->nationality = isset($credential['nationality']) ? $credential['nationality']: null;
             $item->living_status = isset($credential['living_status']) ? $credential['living_status']: null;
+            $item->living_status_other = isset($credential['living_status_other']) ? $credential['living_status_other']: null;
             $item->occupation = isset($credential['occupation']) ? $credential['occupation']: null;
             $item->education_level = isset($credential['education_level']) ? $credential['education_level']: null;
             $item->employment_position = isset($credential['employment_position']) ? $credential['employment_position']: null;
@@ -564,7 +566,7 @@ public function getMembers() {
                 'full_name', 'id','photo_file', 'city', 'phone_cell', 'phone_work', 'phone_home',
                 'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                 'sub_city','wereda','house_number','baptized_church','church_group_place','birth_place', 'emergency_contact_wereda','emergency_contact_name','emergency_contact_phone','emergency_contact_subcity','emergency_contact_house_no',
-                'living_status'
+                'living_status', 'living_status_other'
             );
 
 
@@ -614,6 +616,7 @@ public function getMembers() {
                 $oldItem->nationality = isset($credential['nationality'])? $credential['nationality']: $oldItem->nationality;
                 $oldItem->marital_status = isset($credential['marital_status'])? $credential['marital_status']: $oldItem->marital_status;
                 $oldItem->living_status = isset($credential['living_status'])? $credential['living_status']: $oldItem->living_status;
+                $oldItem->living_status_other = isset($credential['living_status_other'])? $credential['living_status_other']: $oldItem->living_status_other;
                 $oldItem->salvation_date = isset($credential['salvation_date']) ? $credential['salvation_date']: $oldItem->salvation_date;
                 $oldItem->is_baptized = isset($credential['is_baptized']) ? $credential['is_baptized']: $oldItem->is_baptized;
                 $oldItem->baptized_date = isset($credential['baptized_date']) ? $credential['baptized_date']: $oldItem->baptized_date;

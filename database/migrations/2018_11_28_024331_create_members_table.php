@@ -36,6 +36,7 @@ class CreateMembersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('nationality')->nullable();
             $table->string('living_status')->nullable();
+            $table->string('living_status_other')->nullable();
             $table->string('address')->nullable();
             $table->string('salvation_date')->nullable();
             $table->string('salvation_church')->nullable();
