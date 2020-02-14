@@ -359,7 +359,7 @@ public function getMembers() {
     public function create() {
         try{
             $credential = request()->only(
-                'member_id','full_name','photo_file', 'application_type', 'city', 'phone_cell', 'phone_work', 'phone_home',
+                'member_id','full_name','photo_file','photo_url', 'application_type', 'city', 'phone_cell', 'phone_work', 'phone_home',
                 'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                 'sub_city','wereda','house_number','baptized_church','church_group_place','birth_place','emergency_contact_name','emergency_contact_phone','emergency_contact_subcity','emergency_contact_house_no',
                 'have_family_fellowship', 'salvation_church', 'living_status', 'living_status_other'
@@ -397,7 +397,7 @@ public function getMembers() {
 
 
                 $credential = request()->only(
-                    'full_name', 'photo_file', 'city', 'phone_cell', 'phone_work', 'phone_home',
+                    'full_name', 'photo_file', 'photo_url', 'city', 'phone_cell', 'phone_work', 'phone_home',
                     'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                     'sub_city','wereda','house_number','church_group_place','birth_place','emergency_contact_name',
                     'emergency_contact_phone', 'baptized_church', 'emergency_contact_wereda','emergency_contact_subcity','emergency_contact_house_no',
@@ -465,9 +465,10 @@ public function getMembers() {
 //        }
 //    }
     public function addMembearAdmin() {
+
         try{
             $credential = request()->only(
-                'full_name', 'photo_file', 'city', 'phone_cell', 'phone_work', 'phone_home',
+                'full_name', 'photo_file', 'photo_url', 'city', 'phone_cell', 'phone_work', 'phone_home',
                 'email', 'birth_day', 'occupation', 'address','education_level', 'employment_position', 'gender', 'nationality', 'marital_status','salvation_date','is_baptized','baptized_date',
                 'sub_city','wereda','house_number', 'baptized_church', 'church_group_place','birth_place','emergency_contact_name','emergency_contact_phone','emergency_contact_wereda', 'emergency_contact_subcity','emergency_contact_house_no',
                 'have_family_fellowship', 'salvation_church', 'living_status', 'living_status_other'
@@ -486,9 +487,10 @@ public function getMembers() {
 
             $image_file = request()->file('image_file');
 
-            $photo_url = request()->file('photo_url');
+            $photo_url = $credential['photo_url'];
 
             $image_url = null;
+
             if (isset($photo_url)){
                 $image = $credential['photo_url'];  // your base64 encoded
                 $image = str_replace('data:image/png;base64,', '', $image);
