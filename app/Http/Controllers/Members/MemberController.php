@@ -687,7 +687,7 @@ public function getMembers() {
         for ($i=0; $i < $length; $i++) {
             $token .= $codeAlphabet[random_int(0, $max-1)];
         }
-        $token ="MKC-".$token;
+        $token ="WMWC-".$token;
         return $token;
     }
 
